@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform · Storyrings</title>
+<meta name="description" content="The Storyrings platform: a full-screen story viewer, a simple dashboard, a ring designer and built-in analytics.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Storyrings home">
+      <svg width="34" height="34" viewBox="0 0 140 140" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4F8B"/><stop offset="1" stop-color="#FF9A3C"/></linearGradient></defs><circle cx="70" cy="70" r="58" fill="none" stroke="url(#lg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="56 16.9" transform="rotate(-80 70 70)"/><circle cx="70" cy="70" r="34" fill="url(#lg)"/></svg>
+      <span>story<b>rings</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="platform.html" aria-current="page">Platform</a></li>
+      <li><a href="developers.html">Developers</a></li>
+      <li><a href="use-cases.html">Use cases</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="#">Log in</a>
+      <a class="btn btn-primary" href="contact.html">Get early access</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="platform.html" aria-current="page">Platform</a></li>
+      <li><a href="developers.html">Developers</a></li>
+      <li><a href="use-cases.html">Use cases</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="btn btn-primary" href="contact.html">Get early access</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="orb a" data-depth="30" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">The platform</p>
+    <h1 class="reveal" style="--d:.08s">Everything behind the <span class="grad-text">ring</span>.</h1>
+    <p class="lede reveal" style="--d:.16s">A full-screen viewer your users already know how to use, a dashboard your team can run without developers, and analytics that show what works.</p>
+    <div class="hero-ctas reveal" style="--d:.24s"><a class="btn btn-primary" href="contact.html">Get early access</a><a class="btn btn-ghost" href="#designer">Try the ring designer ↓</a></div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+
+    <div class="split">
+      <div class="copy reveal">
+        <p class="eyebrow">Story viewer</p>
+        <h2>Full-screen stories that feel native</h2>
+        <p>The viewer behaves the way people expect from their favourite social apps, so there's nothing to learn.</p>
+        <ul class="ticks">
+          <li>Tap to skip, hold to pause, swipe between groups</li>
+          <li>Images, video and GIFs in 9:16, with muted autoplay</li>
+          <li>A call-to-action button on any story</li>
+          <li>Keyboard and screen-reader friendly</li>
+        </ul>
+      </div>
+      <div class="visual reveal" style="--d:.1s">
+        <div class="phone" aria-hidden="true" style="background:linear-gradient(170deg,#FF4F8B,#7A1E45)">
+          <div class="viewer-art"><i style="width:180px;height:180px;left:-40px;top:120px"></i><i style="width:120px;height:120px;right:-20px;top:60px;animation-delay:-3s"></i></div>
+          <div class="bars"><span><i style="width:100%"></i></span><span><i style="width:55%"></i></span><span><i></i></span></div>
+          <div class="viewer-head" style="color:#fff"><span class="mini" style="background:linear-gradient(160deg,#FF9A3C,#7A3A08)"></span>New in</div>
+          <div class="viewer-slide" style="color:#fff"><h3>Just landed</h3><p>Fresh drops, straight from the dashboard.</p></div>
+          <div class="viewer-cta" style="display:flex;align-items:center;justify-content:center">Shop now</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split flip">
+      <div class="copy reveal">
+        <p class="eyebrow">Dashboard</p>
+        <h2>Run your stories without a developer</h2>
+        <p>Your marketing team creates, schedules and publishes. Changes show up in your app or website straight away, with no release needed.</p>
+        <ul class="ticks">
+          <li>Story groups as cards, with drag-to-reorder</li>
+          <li>One switch to put a whole group live or take it down</li>
+          <li>Schedule start and end dates for campaigns</li>
+          <li>Separate apps and websites, each with its own token</li>
+        </ul>
+      </div>
+      <div class="visual reveal" style="--d:.1s">
+        <div class="phone" aria-hidden="true" style="width:340px">
+          <div class="screen dash on" style="position:absolute">
+            <h4>Content</h4>
+            <div class="gcard" style="--c:linear-gradient(160deg,#FF4F8B,#7A1E45)"><span class="c"></span><span>Flash Sale<br><span style="color:#8A8A92">3 stories</span></span><span class="thumbs"><i></i><i></i><i></i></span><span class="tog on"></span></div>
+            <div class="gcard" style="--c:linear-gradient(160deg,#FF9A3C,#7A3A08)"><span class="c"></span><span>New in<br><span style="color:#8A8A92">2 stories</span></span><span class="thumbs"><i></i><i></i></span><span class="tog on"></span></div>
+            <div class="gcard" style="--c:linear-gradient(160deg,#22C1A8,#0D4A44)"><span class="c"></span><span>Live event<br><span style="color:#8A8A92">Starts Fri 18:00</span></span><span class="thumbs"><i></i></span><span class="tog"></span></div>
+            <div class="gcard" style="--c:linear-gradient(160deg,#8B5CF6,#2E1A63)"><span class="c"></span><span>Lookbook<br><span style="color:#8A8A92">5 stories</span></span><span class="thumbs"><i></i><i></i><i></i></span><span class="tog on"></span></div>
+            <div class="field" style="text-align:center;border-style:dashed">+ New group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="designer" class="alt">
+  <div class="wrap">
+    <div class="studio reveal">
+      <div>
+        <p class="eyebrow">Ring designer</p>
+        <h2 style="font-size:clamp(30px,4vw,46px);margin-top:14px">The ring is your hook. Design one now.</h2>
+        <p style="color:var(--muted);margin-top:14px;font-size:17px">These are the same controls your team gets in the dashboard. Try them.</p>
+        <div class="controls">
+          <div><div class="ctrl-label" id="l-style">Ring style</div>
+            <div class="seg" role="group" aria-labelledby="l-style" id="styleSeg">
+              <button aria-pressed="true" data-v="gradient">Gradient</button>
+              <button aria-pressed="false" data-v="spin">Rotating</button>
+              <button aria-pressed="false" data-v="glow">Glow</button>
+              <button aria-pressed="false" data-v="solid">Solid</button>
+            </div></div>
+          <div><div class="ctrl-label" id="l-col">Brand colour</div>
+            <div class="swatches" role="group" aria-labelledby="l-col" id="colSeg">
+              <button aria-pressed="true" aria-label="Pink and orange" style="--sw:linear-gradient(135deg,#FF4F8B,#FF9A3C)" data-a="#FF4F8B" data-b="#FF9A3C"></button>
+              <button aria-pressed="false" aria-label="Violet and blue" style="--sw:linear-gradient(135deg,#8B5CF6,#3C8BFF)" data-a="#8B5CF6" data-b="#3C8BFF"></button>
+              <button aria-pressed="false" aria-label="Teal and lime" style="--sw:linear-gradient(135deg,#22C1A8,#B6E43C)" data-a="#22C1A8" data-b="#B6E43C"></button>
+              <button aria-pressed="false" aria-label="Red and gold" style="--sw:linear-gradient(135deg,#E5383B,#FFC83D)" data-a="#E5383B" data-b="#FFC83D"></button>
+            </div></div>
+          <div><div class="ctrl-label" id="l-bdg">Badge</div>
+            <div class="seg" role="group" aria-labelledby="l-bdg" id="bdgSeg">
+              <button aria-pressed="false" data-v="">None</button>
+              <button aria-pressed="true" data-v="NEW">NEW</button>
+              <button aria-pressed="false" data-v="SALE">SALE</button>
+              <button aria-pressed="false" data-v="LIVE">LIVE</button>
+            </div></div>
+        </div>
+      </div>
+      <div class="designer-stage" aria-live="polite">
+        <div class="d-ring" id="dRing"><div class="in" id="dIn">SS26</div><span class="bdg" id="dBdg">NEW</span></div>
+        <p class="d-label" id="dLabel">Gradient ring · NEW badge</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="copy reveal">
+        <p class="eyebrow">Analytics</p>
+        <h2>See which stories people actually watch</h2>
+        <p>Every group and every story is tracked automatically, so you can see what earns a tap and what gets skipped.</p>
+        <ul class="ticks">
+          <li>Impressions, opens and completion rate</li>
+          <li>Button clicks for every call-to-action</li>
+          <li>Results per app, per group and per story</li>
+          <li>Events you can send to your own analytics tools</li>
+        </ul>
+      </div>
+      <div class="visual reveal" style="--d:.1s">
+        <div class="stats-mock" aria-label="Example analytics dashboard with sample data">
+          <div class="row">
+            <div class="stat"><small>Opens</small><b>[sample]</b></div>
+            <div class="stat"><small>Completion</small><b>[sample]</b></div>
+          </div>
+          <div class="chart" aria-hidden="true"><i style="--h:40%;--n:0"></i><i style="--h:62%;--n:1"></i><i style="--h:48%;--n:2"></i><i style="--h:80%;--n:3"></i><i style="--h:70%;--n:4"></i><i style="--h:92%;--n:5"></i><i style="--h:84%;--n:6"></i></div>
+          <p class="hint" style="text-align:center">Example dashboard. Sample data only.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Also included</p>
+      <h2>The details that make it work</h2>
+    </div>
+    <div class="features">
+      <div class="feature reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Scheduling</h3><p>Set a start and end date and a group appears and disappears on its own.</p></div>
+      <div class="feature reveal" style="--d:.08s"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 21h14"/></svg></div><h3>Bulk upload</h3><p>Drop in several images or videos at once and each one becomes a story.</p></div>
+      <div class="feature reveal" style="--d:.16s"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Seen state</h3><p>Watched rings change style, so new content always stands out.</p></div>
+      <div class="feature reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M8 12h8"/></svg></div><h3>Live preview</h3><p>Preview a group in a phone frame before it goes live.</p></div>
+      <div class="feature reveal" style="--d:.08s"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5c2.4.2 4 1.8 4.5 4.5"/></svg></div><h3>Team access</h3><p>Invite your team to create and publish content together.</p></div>
+      <div class="feature reveal" style="--d:.16s"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg></div><h3>Fast and accessible</h3><p>A lightweight script that respects reduced motion and works with assistive tech.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="cta-rings" aria-hidden="true"><i></i><i style="animation-delay:-2s"></i><i style="animation-delay:-4s"></i></div>
+      <h2>Ready to see it in your product?</h2>
+      <p>Join the early access group and we'll help you launch your first story groups.</p>
+      <div class="hero-ctas" style="justify-content:center"><a class="btn btn-primary" href="contact.html">Request early access</a><a class="btn btn-ghost" href="developers.html">See the code</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index.html" style="font-size:20px"><span>story<b>rings</b></span></a><p style="margin-top:12px;max-width:280px">Stories as a Service for apps and websites.</p></div>
+      <div><h4>Product</h4><ul><li><a href="platform.html">Platform</a></li><li><a href="platform.html#designer">Ring designer</a></li><li><a href="use-cases.html">Use cases</a></li></ul></div>
+      <div><h4>Developers</h4><ul><li><a href="developers.html">Quick start</a></li><li><a href="developers.html#platforms">Platform support</a></li><li><a href="#">Docs</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><p>© <span id="yr"></span> Storyrings · Lunasmedia</p><p>Made with rings.</p></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

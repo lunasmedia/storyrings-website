@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get early access · Storyrings</title>
+<meta name="description" content="Request early access to Storyrings and add stories to your app or website.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Storyrings home">
+      <svg width="34" height="34" viewBox="0 0 140 140" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4F8B"/><stop offset="1" stop-color="#FF9A3C"/></linearGradient></defs><circle cx="70" cy="70" r="58" fill="none" stroke="url(#lg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="56 16.9" transform="rotate(-80 70 70)"/><circle cx="70" cy="70" r="34" fill="url(#lg)"/></svg>
+      <span>story<b>rings</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="platform.html">Platform</a></li>
+      <li><a href="developers.html">Developers</a></li>
+      <li><a href="use-cases.html">Use cases</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="#">Log in</a>
+      <a class="btn btn-primary" href="contact.html">Get early access</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="platform.html">Platform</a></li>
+      <li><a href="developers.html">Developers</a></li>
+      <li><a href="use-cases.html">Use cases</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero" style="padding-bottom:40px">
+  <div class="orb a" data-depth="30" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">Early access</p>
+    <h1 class="reveal" style="--d:.08s">Let's put <span class="grad-text">rings</span> in your product.</h1>
+    <p class="lede reveal" style="--d:.16s">We're working with a small group of early partners. Tell us a little about your app or website and we'll be in touch.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap contact-grid">
+    <form class="card reveal" id="accessForm" data-to="hello@storyrings.com" novalidate>
+      <div class="field-row">
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Company<input name="company" autocomplete="organization" required></label>
+      </div>
+      <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+      <label>Where do you want stories?
+        <select name="platform">
+          <option>Website</option>
+          <option>iOS app</option>
+          <option>Android app</option>
+          <option>React Native app</option>
+          <option>More than one</option>
+        </select>
+      </label>
+      <label>What would you share in stories? <span class="hint">Optional</span><textarea name="message"></textarea></label>
+      <button class="btn btn-primary" type="submit" style="align-self:flex-start">Request early access</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+    </form>
+
+    <div class="reveal" style="--d:.1s">
+      <h2 style="font-size:32px;margin-bottom:8px">Questions</h2>
+      <div class="faq">
+        <details><summary>What do I get with early access?</summary><p>Your dashboard login, tokens for your apps and websites, and direct help from us setting up your first story groups.</p></details>
+        <details><summary>Do I need a developer?</summary><p>Only once, to add a few lines of code. After that your team runs everything from the dashboard.</p></details>
+        <details><summary>Which platforms are supported?</summary><p>Websites and React today. iOS, Android and React Native SDKs are coming soon. See <a class="text-link" href="developers.html#platforms">platform support</a>.</p></details>
+        <details><summary>Can I use my own brand colours?</summary><p>Yes. Rings, badges and titles can all be styled to match your brand. Try the <a class="text-link" href="platform.html#designer">ring designer</a>.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index.html" style="font-size:20px"><span>story<b>rings</b></span></a><p style="margin-top:12px;max-width:280px">Stories as a Service for apps and websites.</p></div>
+      <div><h4>Product</h4><ul><li><a href="platform.html">Platform</a></li><li><a href="platform.html#designer">Ring designer</a></li><li><a href="use-cases.html">Use cases</a></li></ul></div>
+      <div><h4>Developers</h4><ul><li><a href="developers.html">Quick start</a></li><li><a href="developers.html#platforms">Platform support</a></li><li><a href="#">Docs</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><p>© <span id="yr"></span> Storyrings · Lunasmedia</p><p>Made with rings.</p></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
