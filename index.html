@@ -100,9 +100,7 @@
       <h2 id="live-stories-title">Live from Storyrings. <span class="grad-text">Tap a ring.</span></h2>
       <p>These stories run on the real Storyrings web SDK.</p>
     </div>
-    <div class="live-bar">
-      <div id="stories"></div>
-    </div>
+    <div id="stories"></div>
   </div>
 </section>
 
@@ -195,16 +193,35 @@
 <script>
   (function () {
     var section = document.getElementById('live-stories');
+    var el = document.getElementById('stories');
+    var PHONE = 640, PHONE_SIZE = 64, DESKTOP_SIZE = 76;
+    var size = function () { return innerWidth < PHONE ? PHONE_SIZE : DESKTOP_SIZE; };
+    var hide = function () { section.hidden = true; };
+    if (!window.Stories) return hide();
+
+    // If the dashboard's "Shape & size" setting overrides circleSize,
+    // scale the whole bar down on phones so the items stay phone-sized.
+    var fit = function () {
+      var w = el.shadowRoot && el.shadowRoot.querySelector('[style*="--s-size"]');
+      var px = w ? parseFloat(w.style.getPropertyValue('--s-size')) : 0;
+      el.style.zoom = innerWidth < PHONE && px > PHONE_SIZE ? (PHONE_SIZE / px).toFixed(3) : '';
+    };
+
+    var bar;
     try {
-      Stories.init({ token: 'pk_live_jWoljeyihce78bGMPKMGMBt6' }).mount('#stories');
-    } catch (e) {
-      section.hidden = true;
-      return;
-    }
-    // Hide the section if no stories have appeared after 10 seconds
-    setTimeout(function () {
-      if (!document.getElementById('stories').children.length) section.hidden = true;
-    }, 10000);
+      bar = Stories.init({ token: 'pk_live_jWoljeyihce78bGMPKMGMBt6' }).mount('#stories', {
+        theme: { circleSize: size() },
+        onLoad: function (groups) { if (!groups.length) hide(); requestAnimationFrame(fit); },
+        onFail: hide
+      });
+    } catch (e) { return hide(); }
+
+    var last = size();
+    addEventListener('resize', function () {
+      var s = size();
+      if (s !== last) { last = s; bar.update({ theme: { circleSize: s } }); }
+      fit();
+    });
   })();
 </script>
 </body>
