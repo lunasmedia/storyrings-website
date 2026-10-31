@@ -284,7 +284,13 @@ td code{font:13px "JetBrains Mono",monospace;color:var(--orange)}
 .uses{display:flex;gap:16px;height:380px}
 .use{flex:1;border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;color:#fff;position:relative;overflow:hidden;transition:flex .6s var(--ease);text-decoration:none}
 .use:hover,.use:focus-visible{flex:2.4}
-.use h3{font-size:22px}
+/* photo layer (zooms on hover) + brand tint at the top + dark fade at the bottom for legible text */
+.use::before{content:"";position:absolute;inset:0;background:var(--img) center/cover no-repeat;transition:transform .9s var(--ease)}
+.use::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--tint,#000) 55%,transparent) 0%,transparent 42%),linear-gradient(0deg,rgba(8,8,10,.88) 0%,rgba(8,8,10,.35) 50%,transparent 75%)}
+.use:hover::before,.use:focus-visible::before{transform:scale(1.07)}
+.use>h3,.use>p{position:relative;z-index:1}
+.use .bigring{z-index:1}
+.use h3{font-size:22px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
 .use p{font-size:15px;opacity:0;transform:translateY(10px);transition:opacity .4s .1s,transform .4s .1s;max-width:300px}
 .use:hover p,.use:focus-visible p{opacity:.92;transform:none}
 .use .bigring{position:absolute;top:24px;right:24px;width:64px;height:64px;border-radius:50%;border:4px solid rgba(255,255,255,.85);transition:transform .6s var(--ease)}
