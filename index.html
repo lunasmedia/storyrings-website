@@ -93,6 +93,19 @@
   </div>
 </section>
 
+<section class="live-stories" id="live-stories" aria-labelledby="live-stories-title">
+  <div class="wrap">
+    <div class="live-head reveal">
+      <span class="live-dot" aria-hidden="true"></span>
+      <h2 id="live-stories-title">Live from Storyrings. <span class="grad-text">Tap a ring.</span></h2>
+      <p>These stories run on the real Storyrings web SDK.</p>
+    </div>
+    <div class="live-bar">
+      <div id="stories"></div>
+    </div>
+  </div>
+</section>
+
 <div class="marquee" aria-label="Things you can share with Storyrings">
   <div class="marquee-track" id="marquee"></div>
 </div>
@@ -178,5 +191,21 @@
 </footer>
 
 <script src="main.js"></script>
+<script src="https://stories-dashboard.fly.dev/sdk/v1/stories.js"></script>
+<script>
+  (function () {
+    var section = document.getElementById('live-stories');
+    try {
+      Stories.init({ token: 'pk_live_jWoljeyihce78bGMPKMGMBt6' }).mount('#stories');
+    } catch (e) {
+      section.hidden = true;
+      return;
+    }
+    // Hide the section if no stories have appeared after 10 seconds
+    setTimeout(function () {
+      if (!document.getElementById('stories').children.length) section.hidden = true;
+    }, 10000);
+  })();
+</script>
 </body>
 </html>
