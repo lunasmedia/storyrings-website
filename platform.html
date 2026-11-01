@@ -15,33 +15,102 @@
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header id="hdr">
-  <div class="wrap nav">
-    <a class="logo" href="index.html" aria-label="Storyrings home">
-      <svg width="34" height="34" viewBox="0 0 140 140" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4F8B"/><stop offset="1" stop-color="#FF9A3C"/></linearGradient></defs><circle cx="70" cy="70" r="58" fill="none" stroke="url(#lg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="56 16.9" transform="rotate(-80 70 70)"/><circle cx="70" cy="70" r="34" fill="url(#lg)"/></svg>
-      <span>story<b>rings</b></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="platform.html" aria-current="page">Platform</a></li>
-      <li><a href="developers.html">Developers</a></li>
-      <li><a href="use-cases.html">Use cases</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a class="btn btn-ghost" href="#">Log in</a>
-      <a class="btn btn-primary" href="contact.html">Get early access</a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <div class="announce" id="announce">
+    <div class="wrap announce-in">
+      <span class="live-dot" aria-hidden="true"></span>
+      <p>Early access is open. <span class="hide-sm">Launch your first stories this week.</span></p>
+      <a href="contact.html">Request access →</a>
+      <button class="announce-x" id="announceX" aria-label="Dismiss announcement"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="platform.html" aria-current="page">Platform</a></li>
-      <li><a href="developers.html">Developers</a></li>
-      <li><a href="use-cases.html">Use cases</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a class="btn btn-primary" href="contact.html">Get early access</a></li>
-    </ul>
-  </nav>
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="index.html" aria-label="Storyrings home">
+        <svg width="32" height="32" viewBox="0 0 140 140" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4F8B"/><stop offset="1" stop-color="#FF9A3C"/></linearGradient></defs><circle cx="70" cy="70" r="58" fill="none" stroke="url(#lg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="56 16.9" transform="rotate(-80 70 70)"/><circle cx="70" cy="70" r="34" fill="url(#lg)"/></svg>
+        <span>story<b>rings</b></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <ul class="nav-links">
+      <li class="has-menu is-current">
+        <button class="nav-trigger" aria-expanded="false" aria-controls="m-platform">Platform <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mega" id="m-platform">
+          <div class="mega-main">
+            <p class="mega-label">Product</p>
+            <ul class="mega-items">
+            <li><a href="platform.html#viewer"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 6h6"/></svg></span><span class="mi-text"><b>Story viewer</b><small>Full-screen, tap-through stories</small></span></a></li>
+            <li><a href="platform.html#dashboard"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><span class="mi-text"><b>Dashboard</b><small>Create and publish without code</small></span></a></li>
+            <li><a href="platform.html#designer"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span><span class="mi-text"><b>Ring designer</b><small>Rings that are impossible to ignore</small></span></a></li>
+            <li><a href="platform.html#analytics"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="mi-text"><b>Analytics</b><small>See what people actually watch</small></span></a></li>
+            </ul>
+            <a class="mega-foot" href="platform.html">Platform overview →</a>
+          </div>
+      <a class="mega-feature feat-rings" href="index.html#live-stories">
+        <span class="feat-ringrow" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="feat-kicker">Live demo</span>
+        <b>Tap a real story bar</b>
+        <span>Our homepage runs on the Storyrings SDK. Try it →</span>
+      </a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <button class="nav-trigger" aria-expanded="false" aria-controls="m-solutions">Solutions <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mega" id="m-solutions">
+          <div class="mega-main">
+            <p class="mega-label">By use case</p>
+            <ul class="mega-items">
+            <li><a href="use-cases.html#retail"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.8a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg></span><span class="mi-text"><b>Retail &amp; e-commerce</b><small>Drops, sales and shoppable looks</small></span></a></li>
+            <li><a href="use-cases.html#media"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span><span class="mi-text"><b>Media &amp; sport</b><small>Highlights fans can tap through</small></span></a></li>
+            <li><a href="use-cases.html#onboarding"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.3-2 4.5-2 6 1.5 0 4.7-.5 6-2"/><path d="M9 15l-3-3c1.8-5 6-9 13-9 0 7-4 11.2-9 13z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg></span><span class="mi-text"><b>Onboarding</b><small>Five taps instead of a tutorial</small></span></a></li>
+            <li><a href="use-cases.html#announcements"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h3l8 5V4L7 9H4a1 1 0 0 0-1 1z"/><path d="M19 9a4 4 0 0 1 0 6"/></svg></span><span class="mi-text"><b>Announcements</b><small>News that gets noticed</small></span></a></li>
+            </ul>
+            <a class="mega-foot" href="use-cases.html">All use cases →</a>
+          </div>
+      <a class="mega-feature feat-photo" href="use-cases.html">
+        <span class="feat-kicker">Use cases</span>
+        <b>One format, endless reasons to tap</b>
+        <span>See how teams use stories →</span>
+      </a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <button class="nav-trigger" aria-expanded="false" aria-controls="m-developers">Developers <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mega" id="m-developers">
+          <div class="mega-main">
+            <p class="mega-label">Build</p>
+            <ul class="mega-items">
+            <li><a href="developers.html#quick-start"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><span class="mi-text"><b>Quick start</b><small>Live in a few lines of code</small></span></a></li>
+            <li><a href="developers.html#platforms"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="12" rx="1.5"/><path d="M6 18h6"/></svg></span><span class="mi-text"><b>Platform support</b><small>Web today, native next</small></span></a></li>
+            <li><a href="developers.html#options"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></span><span class="mi-text"><b>Options &amp; callbacks</b><small>Hook stories into your app</small></span></a></li>
+            <li><a href="contact.html"><span class="mi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></span><span class="mi-text"><b>Get your token</b><small>Join early access</small></span></a></li>
+            </ul>
+            <a class="mega-foot" href="developers.html">Developer overview →</a>
+          </div>
+      <a class="mega-feature feat-code" href="developers.html#quick-start">
+        <span class="feat-kicker">Quick start</span>
+        <code><span class="c-k">Stories</span>.init({ token })<br>&nbsp;&nbsp;.mount(<span class="c-s">'#stories'</span>);</code>
+        <span>That's the whole integration →</span>
+      </a>
+        </div>
+      </li>
+      <li><a class="nav-plain" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-sm" href="#">Log in</a>
+        <a class="btn btn-primary btn-sm" href="contact.html">Get early access</a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <div class="mobile-inner">
+      <details open><summary>Platform<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="platform.html#viewer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 6h6"/></svg>Story viewer</a></li><li><a href="platform.html#dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg>Dashboard</a></li><li><a href="platform.html#designer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>Ring designer</a></li><li><a href="platform.html#analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Analytics</a></li><li><a href="platform.html">Platform overview →</a></li></ul></details>
+      <details><summary>Solutions<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="use-cases.html#retail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.8a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>Retail &amp; e-commerce</a></li><li><a href="use-cases.html#media"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>Media &amp; sport</a></li><li><a href="use-cases.html#onboarding"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.3-2 4.5-2 6 1.5 0 4.7-.5 6-2"/><path d="M9 15l-3-3c1.8-5 6-9 13-9 0 7-4 11.2-9 13z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg>Onboarding</a></li><li><a href="use-cases.html#announcements"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h3l8 5V4L7 9H4a1 1 0 0 0-1 1z"/><path d="M19 9a4 4 0 0 1 0 6"/></svg>Announcements</a></li><li><a href="use-cases.html">All use cases →</a></li></ul></details>
+      <details><summary>Developers<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="developers.html#quick-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>Quick start</a></li><li><a href="developers.html#platforms"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="12" rx="1.5"/><path d="M6 18h6"/></svg>Platform support</a></li><li><a href="developers.html#options"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Options &amp; callbacks</a></li><li><a href="contact.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>Get your token</a></li><li><a href="developers.html">Developer overview →</a></li></ul></details>
+      <a class="mobile-plain" href="contact.html">Contact</a>
+      <div class="mobile-actions"><a class="btn btn-ghost" href="#">Log in</a><a class="btn btn-primary" href="contact.html">Get early access</a></div>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -59,7 +128,7 @@
 <section style="padding-top:20px">
   <div class="wrap">
 
-    <div class="split">
+    <div class="split" id="viewer">
       <div class="copy reveal">
         <p class="eyebrow">Story viewer</p>
         <h2>Full-screen stories that feel native</h2>
@@ -82,7 +151,7 @@
       </div>
     </div>
 
-    <div class="split flip">
+    <div class="split flip" id="dashboard">
       <div class="copy reveal">
         <p class="eyebrow">Dashboard</p>
         <h2>Run your stories without a developer</h2>
@@ -152,7 +221,7 @@
 
 <section>
   <div class="wrap">
-    <div class="split">
+    <div class="split" id="analytics">
       <div class="copy reveal">
         <p class="eyebrow">Analytics</p>
         <h2>See which stories people actually watch</h2>

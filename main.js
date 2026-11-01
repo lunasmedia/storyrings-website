@@ -15,6 +15,41 @@ if (menuBtn) {
   $$('.mobile-menu a').forEach(a => a.addEventListener('click', () => { hdr.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); }));
 }
 
+/* ---- desktop mega menus: hover (with a short delay) or click, Esc / outside click closes ---- */
+const menus = $$('.has-menu');
+const setOpen = (li, open) => {
+  li.classList.toggle('open', open);
+  li.querySelector('.nav-trigger').setAttribute('aria-expanded', open);
+};
+const closeAll = except => menus.forEach(m => { if (m !== except) setOpen(m, false); });
+const hoverable = matchMedia('(hover:hover) and (pointer:fine)').matches;
+menus.forEach(li => {
+  const btn = li.querySelector('.nav-trigger');
+  let t = null;
+  btn.addEventListener('click', () => { const open = !li.classList.contains('open'); closeAll(li); setOpen(li, open); });
+  if (hoverable) {
+    li.addEventListener('mouseenter', () => { clearTimeout(t); t = setTimeout(() => { closeAll(li); setOpen(li, true); }, 90); });
+    li.addEventListener('mouseleave', () => { clearTimeout(t); t = setTimeout(() => setOpen(li, false), 160); });
+  }
+  li.addEventListener('focusout', e => { if (!li.contains(e.relatedTarget)) setOpen(li, false); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const open = menus.find(m => m.classList.contains('open'));
+  if (open) { setOpen(open, false); open.querySelector('.nav-trigger').focus(); }
+});
+document.addEventListener('click', e => { if (!e.target.closest('.has-menu')) closeAll(); });
+
+/* ---- announcement bar (dismissal remembered in this browser when storage is available) ---- */
+const announce = $('#announce'), announceX = $('#announceX');
+if (announce) {
+  try { if (localStorage.getItem('sr-announce-closed') === '1') announce.classList.add('closed'); } catch (e) {}
+  announceX.addEventListener('click', () => {
+    announce.classList.add('closed');
+    try { localStorage.setItem('sr-announce-closed', '1'); } catch (e) {}
+  });
+}
+
 /* ---- reveal on scroll ---- */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .14, rootMargin: '0px 0px -40px 0px' });
 $$('.reveal, .chart').forEach(el => io.observe(el));
