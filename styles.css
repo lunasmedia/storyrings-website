@@ -335,6 +335,9 @@ pre{margin:0;padding:28px;overflow-x:auto;font:14px/1.7 "JetBrains Mono",monospa
 
 /* table */
 .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+.table-label{font:500 14px "JetBrains Mono",monospace;color:var(--muted);margin:26px 0 10px}
+.table-label:first-of-type{margin-top:0}
+.table-label code{color:var(--orange)}
 table{width:100%;border-collapse:collapse;min-width:560px}
 th,td{text-align:left;padding:18px 22px;border-bottom:1px solid var(--line)}
 th{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-weight:600;background:var(--bg-2)}

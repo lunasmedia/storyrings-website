@@ -237,10 +237,10 @@ if (dRing) {
 const pane = $('#codePane');
 if (pane) {
   const CODE = {
-    web: '<!-- 1. Load the SDK -->\n<script src="https://cdn.storyrings.com/v1/storyrings.js"></' + 'script>\n\n<!-- 2. Place the story bar -->\n<div id="stories"></div>\n\n<script>\n  Storyrings.init({\n    token: "YOUR_WEBSITE_TOKEN",\n    container: "#stories",\n    onCtaClick: (story) => console.log(story.url)\n  });\n</' + 'script>',
-    react: 'import { StoryBar } from "@storyrings/react";\n\nexport default function Home() {\n  return (\n    <StoryBar\n      token="YOUR_WEBSITE_TOKEN"\n      onStoryOpen={(group) => track(group.id)}\n    />\n  );\n}',
-    ios: '// Native iOS SDK: coming soon\nimport Storyrings\n\nlet bar = StoryBarView(token: "YOUR_APP_TOKEN")\nview.addSubview(bar)',
-    android: '// Native Android SDK: coming soon\nval bar = StoryBarView(context)\nbar.token = "YOUR_APP_TOKEN"\ncontainer.addView(bar)'
+    web: '<!-- 1. Load the SDK -->\n<script src="https://stories-dashboard.fly.dev/sdk/v1/stories.js" defer></' + 'script>\n\n<!-- 2. Place the story bar -->\n<div id="stories"></div>\n\n<script>\n  const stories = Stories.init({\n    token: "YOUR_WEBSITE_TOKEN"\n  });\n\n  stories.mount("#stories", {\n    onCtaClick: (e) => console.log(e.url)\n  });\n</' + 'script>',
+    react: 'import { StoriesBar } from "@lunasmedia/storyrings-react";\n\nexport default function Home() {\n  return (\n    <StoriesBar\n      token="YOUR_WEBSITE_TOKEN"\n      onStoryOpen={(e) => track(e.groupId)}\n    />\n  );\n}',
+    ios: 'import StoryRings\n\n// Start the SDK when the app launches\nStoriesClient.start(\n  token: "YOUR_APP_TOKEN",\n  apiURL: "https://stories-dashboard.fly.dev"\n)\n\n// Then place the bar in any SwiftUI view\nScrollView {\n  StoriesBar(\n    token: "YOUR_APP_TOKEN",\n    apiURL: "https://stories-dashboard.fly.dev"\n  )\n}',
+    android: '// Android SDK: coming soon\nStoriesClient.start(\n  this,\n  token = "YOUR_APP_TOKEN",\n  apiUrl = "https://stories-dashboard.fly.dev"\n)\n\nColumn {\n  StoriesBar(\n    token = "YOUR_APP_TOKEN",\n    apiUrl = "https://stories-dashboard.fly.dev"\n  )\n}'
   };
   const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const hl = s => esc(s).replace(/(&lt;!--[\s\S]*?(?:--&gt;|$))|(^[ \t]*\/\/.*$)|("[^"\n]*"?)|\b(import|from|export|default|function|return|let|val|const)\b/gm,
